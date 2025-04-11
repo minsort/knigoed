@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: knigoed
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+
+  # Отключаем кеширование шаблонов для разработки
+  thymeleaf:
+    cache: false
+
+  # Настройки безопасности
+  security:
+    user:
+      name: admin
+      password: password
+
+  # Включение поддержки методов PUT и DELETE в формах
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+
